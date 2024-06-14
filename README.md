@@ -1,4 +1,4 @@
-# Bioinformatics_pipelinefor_LN
+# Bioinformatics_pipeline_for_LN
 The script provides the pipeline for running the analysis using DUMPArts
 The pipeline contained the work as below:
 1. Split the dataset
