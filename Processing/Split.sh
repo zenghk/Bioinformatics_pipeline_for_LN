@@ -1,6 +1,6 @@
 ScriptDir=`pwd`
 #$1 the number of library in the novaseq samples
-
+# This script is used to split the data from the output of NovaSeq into Libfree-DUMPArts pipeline input files
 
 for i in `seq 1 $1`;do mkdir -p Lib${i};done
 
