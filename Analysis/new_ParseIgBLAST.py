@@ -1,4 +1,4 @@
-#!/zzh_gpfs/apps/python/bin/python
+
 import os,sys,csv
 from Bio import SeqIO
 import argparse
