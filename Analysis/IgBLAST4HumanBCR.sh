@@ -1,5 +1,5 @@
-export IGDATA=/share/apps/igblast/ncbi-igblast-1.18.0/bin
-/share/apps/igblast/ncbi-igblast-1.18.0/bin/igblastn \
+export IGDATA=/apps/igblast/ncbi-igblast-1.18.0/bin
+/apps/igblast/ncbi-igblast-1.18.0/bin/igblastn \
 			 -germline_db_V $2/my_IGHV.fasta \
 			 -germline_db_J $2/my_IGHJ.fasta \
 			 -germline_db_D $2/my_IGHD.fasta \
