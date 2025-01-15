@@ -6,7 +6,7 @@ export IGDATA=/share/apps/igblast/ncbi-igblast-1.18.0/bin
 			 -organism human \
 			 -domain_system imgt \
 			 -query $1 \
-			 -auxiliary_data /share/apps/igblast/ncbi-igblast-1.18.0/optional_file/human_gl.aux \
+			 -auxiliary_data /apps/igblast/ncbi-igblast-1.18.0/optional_file/human_gl.aux \
 			 -num_threads 8 \
 			 -outfmt '7 qseqid sseqid pident length mismatch gapopen gaps qstart qend sstart send evalue bitscore qlen slen qseq sseq score frames qframe sframe positive ppos btop staxids stitle sstrand qcovs qcovhsp' \
 			 -ig_seqtype Ig \
