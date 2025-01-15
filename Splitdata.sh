@@ -1,21 +1,23 @@
-ScriptDir="/share/home/zenghuikun/Novaseqsamples/.Script"
+ScriptDir="pwd"
 #$1 the number of library in the novaseq samples
 
-:<<!
-for i in `seq 1 $1`;do mkdir -p Lib${i};done
 
-for i in {8,};do cd Lib${i};
+for i in `seq 1 $1`;do 
+mkdir -p Lib${i};
+done
+
+for i in `seq 1 $1`;do cd Lib${i};
 mv ../${i}_S*.gz ./;cd ../;
 done
 
 
 
-for i in {4,8};do cd Lib${i};
+for i in `seq 1 $1`;do cd Lib${i};
 sh ${ScriptDir}/split.sh;cd ../;done
 
 
 
-for i in {4,8};do 
+for i in `seq 1 $1`;do 
 cd Lib${i};
 num=$(($((`ls x*|wc -l`-2))/2))
 ver_num=`printf "%03d" ${num}`;
@@ -24,7 +26,7 @@ python ${ScriptDir}/FindBarcodeandUMIforLibraryFree20210806.py -LibName Lib${i} 
 cd ../;done
 
 
-:<<BLOCK
+
 for i in `seq 1 $1`;do cd Lib${i};
 num=$(($((`ls x*|wc -l`-2))/2))
 ver_num=`printf "%03d" ${num}`;
@@ -42,7 +44,7 @@ seqkit fx2tab merge.assembled.fastq -o Seqtab.txt;cd ../;done;
 cd ../;done
 
 
-for i in `seq {4,8}`;do 
+for i in `seq 1 $1`;do 
 cd Lib${i};
 python ${ScriptDir}/Sumupoutput.py Libinfo.txt;cd ../;done
 
@@ -52,7 +54,7 @@ python ${ScriptDir}/showresult.py
 
 
 mkdir -p Sample && cd Sample;
-for i in {4,8};do 
+for i in `seq 1 $1`;do 
 python ${ScriptDir}/GroupSample.py ../Lib${i}/Libinfo.txt;done;
 cd ../;
 
